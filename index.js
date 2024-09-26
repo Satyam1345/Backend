@@ -2,10 +2,12 @@
 // import {DB_NAME} from "./src/constants.js" ;
 // import connectDB from "./src/db/index.js";
 // import express from "express" ;
-import dotenv from 'dotenv';
+
 import connectDB from './src/db/index.js';
 import {app} from "./app.js";
+import dotenv from 'dotenv';
 dotenv.config();
+
 import express from 'express'; // Import express
 // const app = express(); // Define the app instance
 
