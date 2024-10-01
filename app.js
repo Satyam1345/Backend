@@ -9,12 +9,12 @@ app.use(cors({
 }))
 
 // TO TAKE JSON DATA
-app.use(express.json({limit : "16kb"}))
+app.use(express.json({limit : "32kb"}))
 
 // TO TAKE DATA FROM  URL's
 app.use(express.urlencoded({
     extended : true,
-limit : "16kb"
+limit : "32kb"
 }));
 // OR
 // app.use(express.urlencoded()) ;

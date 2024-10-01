@@ -60,9 +60,12 @@ userSchema.pre("save" , async function (next) {
     next()
 })
 
-userSchema.methods.isPasswordCorrect = async function(password){
-   return await bcrypt.compare(password , this.password) ; // returns true or false 
+userSchema.methods.isPasswordCorrect = async function(oldPassword) {
+    console.log('Old Password:', oldPassword);
+    console.log('Hashed Password from DB:', this.password);  // Use `this.password` to access the hashed password from the user instance
+    return await bcrypt.compare(oldPassword, this.password);  // Compare the entered password with the user's password
 }
+
 
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
